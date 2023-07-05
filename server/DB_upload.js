@@ -10,7 +10,7 @@ const DB_upload = async () => {
             return {
                 id: pais.cca3,
                 name: pais.name.common,
-                image: pais.flags.svg,
+                flag_img: pais.flags.svg,
                 continent: pais.continents[0],
                 capital: pais.capital ? pais.capital[0] : "Capital",
                 subregion: pais.subregion ? pais.subregion : "Subregion",
