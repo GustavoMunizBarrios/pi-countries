@@ -8,7 +8,7 @@ const {
 } = process.env;
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, {
-  logging: false, 
+  logging: false, //logging: false dejaba de imprimir en la consola
   native: false, 
 });
 const basename = path.basename(__filename);
