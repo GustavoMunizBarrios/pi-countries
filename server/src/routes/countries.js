@@ -42,12 +42,12 @@ router.get('/', async (req, res) => {
 
 router.get('/:idPais', async (req, res) => {
     const {idPais} = req.params; //guarda el ID que se obtiene por params (ID de tres letras del país)
-    const DB_info = await DB_info(); // se obtiene toda la info de paises de la DB
+    const DBinfo = await DB_info(); // se obtiene toda la info de paises de la DB
 
     try {
         if(idPais) { //si se recibe por params un ID
-            // Busca un pais dentro del arreglo DB_info que tenga un id igual al valor de idPais (ID de tres letras del país)
-            const idCountry = await DB_info.find(country => country.id === idPais); 
+            // Busca un pais dentro del arreglo DBinfo que tenga un id igual al valor de idPais (ID de tres letras del país)
+            const idCountry = await DBinfo.find(country => country.id === idPais); 
             
             if(!idCountry) return res.status(400).send('ID of country not found');
 
