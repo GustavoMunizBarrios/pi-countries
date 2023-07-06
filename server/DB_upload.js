@@ -13,11 +13,11 @@ const DB_upload = async () => {
                 id: pais.cca3,
                 name: pais.name.common,
                 flag_img: pais.flags.svg,
-                continent: pais.continents[0],
-                capital: pais.capital ? pais.capital[0] : "Capital",
-                subregion: pais.subregion ? pais.subregion : "Subregion",
+                continent: pais.continents? pais.continents[0]: "undefined",
+                capital: pais.capital ? pais.capital[0] : "undefined",
+                subregion: pais.subregion ? pais.subregion : "undefined",
                 area: pais.area,
-                population: pais.popuation
+                population: pais.population
             }
         })
         // recorre el arreglo countryData en un bucle for y se utiliza Country.findOrCreate para buscar o crear un registro en la
