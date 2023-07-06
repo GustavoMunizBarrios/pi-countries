@@ -1,20 +1,22 @@
 const { Country } = require('../db.js');
 const {Activity} = require('../db.js')
 
-//Obtengo la informacion de mi base de datos
+//Se obtiene la informacion de todos los paises en la DB, incluyendo la relación que cada país tiene con el modelo Activity
 const DB_info = async () => {
     try {
-        return await Country.findAll({
+        return await Country.findAll({ // busca y recupera todos los países de la base de datos.
+            //incluiye la relación entre el modelo Country y Activity. 
+            //Esto permite obtener la información de las actividades relacionadas con cada país.
             include: {
                 model: Activity,
                 attributes: ['name', 'difficulty', 'duration', 'season'],
-                through: {
+                through: { //through se utiliza para especificar que no se desean incluir los atributos adicionales de la tabla intermedia entre Country y Activity
                     attributes: [],
                 },
             }
-        }) //busco todos los paises e incluyo la relacion que tiene cada uno con el modelo Activity, de esta forma cada pais va a tener un atributo "Activities" con los atributos de las actividades con las que esta relacionado. 
+        }) 
     } catch (error) {
-        console.log('Error al obtener todos los Paises de la DB incluyendo sus Actividades', error);
+        console.log('Error when obtaining the countries of the DB and/or the activities', error);
     }
 };
 
