@@ -5,33 +5,28 @@ const router = Router();
 
 // GET | /countries
 //Obtiene un arreglo de objetos, donde cada objeto es un país con toda su información.
-
-//GET | /countries/name?="..." 
-//Esta ruta debe obtener todos aquellos países que coinciden con el nombre recibido por query. (No es necesario que sea una coincidencia exacta).
-//Debe poder buscarlo independientemente de mayúsculas o minúsculas.
-//Si no existe el país, debe mostrar un mensaje adecuado.
-
 router.get('/', async (req, res) => {
-    const {name} = req.query; //guardo la info que obtengo por query (name)
-    await DB_upload(); //Guardo en mi DB todos los paises.
-    const DBinfo = await DB_info(); //obtengo la info que tengo ahora en mi DB
+    const {name} = req.query //guarda la info que se obtiene por query (name)
+    await DB_upload() //Guarda en la DB todos los paises de la api.
+    const DBinfo = await DB_info() // se obtiene la info que se tiene ahora en la DB
     
     try {
         if(!name) {
-            //si no me pasan "name" por query, devuelvo todos los paises. 
-            return res.status(200).json(DBinfo);
+            //si no se pasa "name" por query, se devuelve a todos los paises. 
+            return res.status(200).json(DBinfo)
         }
+
+//GET | /countries/name?="..." 
         else {
-            //si si obtengo a "name" por query, hago un filter de lo que tengo en mi BD y comparo, si alguno de los nombres(propiedad name) 
-            //de todos los objetos(paises) en minusculas (convertida toda la palabra en minuscula), incluye a lo que me llega en "name" tambien 
-            //convertido en minuscula. ¿Por que?, para de esta forma buscar cualquier tipo de coincidencia, por ejemplo si en mi objeto de mi 
-            //pais Argentina, su name es Argentina con minuscula, si me viene por query 'argent' va a devolver igual mi objeto con name "Argentina". 
-            const filteredCountry = DBinfo.filter(element => element.name.toLowerCase().includes(name.toLowerCase()));
+            //si se pasa a "name" por query, se hace un filtrado de lo que se tiene en la DB 
+            const filteredCountry = DBinfo.filter(element => //crea un nuevo arreglo con todos los elementos que cumplan con cierta condición.
+                element.name.toLowerCase(). //se accede a la propiedad name de cada elemento del arreglo DBinfo. toLowerCase() se utiliza para convertir el nombre en minúscula
+                includes(name.toLowerCase()) // Comprueba si la subcadena name está presente en el nombre del elemento actual. Si es así, el elemento pasará el filtro y se incluirá en el nuevo arreglo filteredCountry
+            );
 
-            if(!filteredCountry.length) return res.status(400).json({message: 'Country not found'}); // lo saque para poder hacer el "country not found" en el front, necesitaba un array vacio.
+            //Si filteredCountry esta vacio, devuelve un estado 400 y un mensaje.
+            if(!filteredCountry.length) return res.status(400).json({message: 'Country not found'}) // lo saque para poder hacer el "country not found" en el front, necesitaba un array vacio.
 
-            //Si el array que me devuelve el filter esta vacio, devuelvo un estadi 400 y un mensaje adecuando. Sino, un estado 200 OK, 
-            //y mi array con mi objeto de paises que tuvieron una coincidencia en su propiedad name. 
             return res.status(200).json(filteredCountry)
         }
     } catch (error) {
