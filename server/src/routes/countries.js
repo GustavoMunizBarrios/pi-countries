@@ -18,17 +18,21 @@ router.get('/', async (req, res) => {
     
     try {
         if(!name) {
-
-            return res.status(200).json(DBinfo);
             //si no me pasan "name" por query, devuelvo todos los paises. 
+            return res.status(200).json(DBinfo);
         }
         else {
+            //si si obtengo a "name" por query, hago un filter de lo que tengo en mi BD y comparo, si alguno de los nombres(propiedad name) 
+            //de todos los objetos(paises) en minusculas (convertida toda la palabra en minuscula), incluye a lo que me llega en "name" tambien 
+            //convertido en minuscula. ¿Por que?, para de esta forma buscar cualquier tipo de coincidencia, por ejemplo si en mi objeto de mi 
+            //pais Argentina, su name es Argentina con minuscula, si me viene por query 'argent' va a devolver igual mi objeto con name "Argentina". 
             const filteredCountry = DBinfo.filter(element => element.name.toLowerCase().includes(name.toLowerCase()));
-            //si si obtengo a "name" por query, hago un filter de lo que tengo en mi BD y comparo, si alguno de los nombres(propiedad name) de todos los objetos(paises) en minusculas (convertida toda la palabra en minuscula), incluye a lo que me llega en "name" tambien convertido en minuscula. ¿Por que?, para de esta forma buscar cualquier tipo de coincidencia, por ejemplo si en mi objeto de mi pais Argentina, su name es Argentina con minuscula, si me viene por query 'argent' va a devolver igual mi objeto con name "Argentina". 
 
-            // if(!filteredCountry.length) return res.status(400).json({message: 'Country not found'}); // lo saque para poder hacer el "country not found" en el front, necesitaba un array vacio.
+            if(!filteredCountry.length) return res.status(400).json({message: 'Country not found'}); // lo saque para poder hacer el "country not found" en el front, necesitaba un array vacio.
+
+            //Si el array que me devuelve el filter esta vacio, devuelvo un estadi 400 y un mensaje adecuando. Sino, un estado 200 OK, 
+            //y mi array con mi objeto de paises que tuvieron una coincidencia en su propiedad name. 
             return res.status(200).json(filteredCountry)
-            //si el array que me devuelve el filter esta vacio, devuelvo un estadi 400 y un mensaje adecuando. Sino, un estado 200 OK, y mi array con mi objeto de paises que tuvieron una coincidencia en su propiedad name. 
         }
     } catch (error) {
         console.log(error)
