@@ -8,7 +8,7 @@ const router = Router();
 router.get('/', async (req, res) => {
     const {name} = req.query //guarda la info que se obtiene por query (name)
     await DB_upload() //Guarda en la DB todos los paises de la api.
-    const DBinfo = await DB_info() // se obtiene la info que se tiene ahora en la DB
+    const DBinfo = await DB_info() // se obtiene toda la info de paises de la DB
     
     try {
         if(!name) {
@@ -41,18 +41,17 @@ router.get('/', async (req, res) => {
 //Tiene que incluir los datos de las actividades turísticas asociadas a este país.
 
 router.get('/:idPais', async (req, res) => {
-    const {idPais} = req.params; //guardo la info que obtengo por params (idPais)
-    const allCountry = await DB_info();//obtengo la info que tengo ahora en mi DB
+    const {idPais} = req.params; //guarda el ID que se obtiene por params (ID de tres letras del país)
+    const DB_info = await DB_info(); // se obtiene toda la info de paises de la DB
 
     try {
-        if(idPais) {
-            const idFound = await allCountry.find(country => country.id === idPais); 
-            //si recibo por params un ID, me fijo con un find si encuentro coincidencia con algun ID de todos los paises que tengo en mi DB
+        if(idPais) { //si se recibe por params un ID
+            // Busca un pais dentro del arreglo DB_info que tenga un id igual al valor de idPais (ID de tres letras del país)
+            const idCountry = await DB_info.find(country => country.id === idPais); 
+            
+            if(!idCountry) return res.status(400).send('ID of country not found');
 
-            if(!idFound) return res.status(400).send('ID of country not found');
-            // si no obtuve ninguna coincidencia mando un status 400 y un mensaje
-
-            return res.status(200).json(idFound); // si si encuentra coincidencia, un 200 OK y el objeto que encontre.
+            return res.status(200).json(idCountry); 
         }
     } catch (error) {
         return res.status(400).send(error);
