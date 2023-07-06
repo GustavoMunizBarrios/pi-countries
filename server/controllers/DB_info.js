@@ -1,5 +1,5 @@
-const { Country } = require('../db.js');
-const {Activity} = require('../db.js')
+const { Country } = require('../src/db');
+const {Activity} = require('../src/db')
 
 //Se obtiene la informacion de todos los paises en la DB, incluyendo la relación que cada país tiene con el modelo Activity
 const DB_info = async () => {
