@@ -21,8 +21,6 @@ router.get('/', async (req, res) => {
 
 //POST | /activities
 //Esta ruta recibirá todos los datos necesarios para crear una actividad turística y relacionarla con los países solicitados.
-//Toda la información debe ser recibida por body.
-//Debe crear la actividad turística en la base de datos, y esta debe estar relacionada con los países indicados (al menos uno).
 
 router.post('/', async (req, res) => {
     //Se extrae de body todos los atributos del modelo Activity y el ID del Pais para establecer la relacion 
@@ -37,7 +35,6 @@ router.post('/', async (req, res) => {
         return res.status(400).send(error)
     }
 });
-
 
 //DELETE | /?=name="..."
 //Elimina una actividad a partir de un nombre obtenido por query. 
