@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const postActivity = require('../controllers/postActivity.js')
+const postActivity = require('../../controllers/postActivity')
 const deleteActivity = require('../controllers/deleteActivity.js')
 const { Activity } = require('../db');
 

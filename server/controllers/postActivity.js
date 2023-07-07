@@ -1,4 +1,4 @@
-const { Activity } = require('../db.js');
+const { Activity } = require('../src/db');
 
 //Creo una nueva Actividad y la relaciono con el pais correspondiente
 
