@@ -49,7 +49,7 @@ router.get('/:idPais', async (req, res) => {
             // Busca un pais dentro del arreglo DBinfo que tenga un id igual al valor de idPais (ID de tres letras del país)
             const idCountry = await DBinfo.find(country => country.id === idPais); 
             
-            if(!idCountry) return res.status(400).send('ID of country not found');
+            if(!idCountry) return res.status(400).send('ID not found');
 
             return res.status(200).json(idCountry); 
         }
