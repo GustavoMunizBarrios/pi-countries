@@ -1,32 +1,31 @@
 import './App.css'
 import { Route, Routes, useLocation} from 'react-router-dom'
-import Detail from './components/Detail/Detail'
-import Form from './components/Form/Form'
-import Home from './components/Home/Home'
 import Landing from './components/Landing/Landing'
-import Nav from './components/Nav/Nav'
+import Home from './components/Home/Home'
+import Form from './components/Form/Form'
+import Detail from './components/Detail/Detail'
+import Nav from './components/Nav/Nav' 
 
 
 function App() {
-
-  const location = useLocation()
+  const location = useLocation()  
 
   return (
-    <div className="App">
+    <>
+      <div>
+        <div> 
+        { location.pathname !== '/' && location.pathname !== '/home' ? <Nav/>: null } {/* Si la ruta actual no es '/' ni '/home', se muestra el componente Nav. */}
+        <Routes>
+          <Route path='/' element={<Landing/>}/>
+          <Route path='/home' element={<Home/>}/>
+          <Route path='/detail/:id' element={<Detail/>}/>
+          <Route path='/form' element={<Form/>}/>
+        </Routes>
 
-      <div className='shadow'>
-
-      { location.pathname !== '/' && location.pathname !== '/home' ? <Nav/>: null }
-
-      <Routes>
-        <Route path='/' element={<Landing/>}/>  
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/detail/:id' element={<Detail/>}/>
-        <Route path='/form' element={<Form/>}/>
-      </Routes>
+        </div>
 
       </div>
-    </div>
+    </>
   )
 }
 
