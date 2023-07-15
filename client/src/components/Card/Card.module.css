@@ -1,0 +1,14 @@
+.Card {
+    border-radius: 5%;
+    border: 1px solid black;
+    height:220px;
+    width:190px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  
+  .imgCard {
+    border-radius: 10%;
+    height: 100px;
+    width: 140px;
+  }
