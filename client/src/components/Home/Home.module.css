@@ -1,0 +1,14 @@
+.container{
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    /* height:515px;
+    width:1070px; 
+    background-color: rgba(0, 0, 0, 0.253);*/
+}
