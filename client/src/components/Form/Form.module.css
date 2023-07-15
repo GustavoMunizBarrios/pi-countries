@@ -1,0 +1,13 @@
+
+.formError {
+  color: red;
+  font-size: 13px;
+  margin-top: 0px; 
+}
+
+.contenedor{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 580px;
+}
