@@ -153,11 +153,11 @@ const Home = () => {
                    : (<p>Country not Found</p>)
                 }
                  <div>
-                                 <Paginado
-                                   currentPage={currentPage}
-                                   totalPages={totalPages}
-                                   onChangePage={handlePageChange}
-                                 />
+                    <Paginado
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onChangePage={handlePageChange}
+                    />
                  </div>
             </div>
             </div>
