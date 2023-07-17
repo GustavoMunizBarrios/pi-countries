@@ -7,6 +7,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+html {
+  background-color: #F1F0EE;
+}
 
 body {
   margin: 0;
