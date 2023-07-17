@@ -1,27 +1,239 @@
-
-
-  a:link, a:visited, a:active {
-    text-decoration:none;
-    color: black;
+.landing {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
 }
-.img{
-    height: 25px;
-    width: 25px;
-    margin-left: 5px;
-    margin-right: 5px;
-    transition: 0.5s;
-    border-radius: 20px;
-    
+.background {
+    position: absolute;
+    top: 47%;
+    right: 65%;
+    z-index: 0;
+    width: 1000px;
+    height: 500px;
+    rotate: 45deg;
 }
-
-.alink:hover{
-    filter:invert(100%)
+.background02 {
+    position: absolute;
+    top: 2%;
+    right: -16%;
+    z-index: 0;
+    width: 1000px;
+    height: 500px;
+    rotate: 45deg;
 }
-
-.topLeft {
+/* ********************************************************************************** */
+/* ********************* Links de linkedIn y github ****************************** */
+/* ********************************************************************************** */
+.links {
+/*    display: flex;
+   flex-direction: row; */
    display: flex;
-   flex-direction: row;
-   margin-left: 40px;
-   margin-top: 35px;
+   justify-content: space-between;
+   align-items: center;
+   height: 60px;
+   width: 130px;
+   position: absolute;
+   top: 5%;
+   right: 90%;
    
   }
+.link_img{
+    width: 44px;
+}
+.link_img:hover {
+    width: 47px;
+}
+/* ********************************************************************************** */
+/* ********************* Titulo principal y planeta ****************************** */
+/* ********************************************************************************** */
+.title {
+    font-size: 3rem;
+    text-align: center;
+    margin-left: 200px;
+    margin-bottom: 290px;
+    color: #1e3231;
+    /* color: #FE654F; */
+    letter-spacing: 3px;
+    font-weight: 900;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.title h1 {
+    margin-bottom: 100px;
+    z-index: 5;
+}
+.imgEarth {
+    width: 600px;
+    position: absolute;
+    top: 24%;
+    right: 12%;
+    rotate: 10deg;
+
+    --m:
+    radial-gradient(circle farthest-side at right,#000 99%,#0000) 
+      0 100%/48% 100% no-repeat,
+    radial-gradient(circle farthest-side at left ,#000 99%,#0000) 
+      100% 0/48% 100% no-repeat;
+    -webkit-mask: var(--m);
+          mask: var(--m);
+    transition: .3s linear;
+}
+.imgEarth:hover {
+    /* width: 610px; */
+
+    -webkit-mask-position: 7.5% 50%,92.5% 50%;
+    mask-position: 7.5% 50%,92.5% 50%;
+filter: grayscale(0);
+}
+
+/* ********************************************************************************** */
+/* ********************* Banderas*********************** ****************************** */
+/* ********************************************************************************** */
+.flag_img {
+    position: absolute;
+    width: 150px;
+    /* height: 100px; */
+    border-radius: 50px;
+    opacity: 0.5;
+}
+ .flag_img:hover {
+    border-radius: 80px;
+    opacity: 1;
+} 
+.flag_img_kenia {
+    position: absolute;
+    top: 77%;
+    right: 20%;
+}
+.flag_img_mexico {
+    position: absolute;
+    top: 14%;
+    right: 37%;
+}
+.flag_img_sweden {
+    position: absolute;
+    top: 24%;
+    right: 10%;
+}
+.flag_img_france {
+    position: absolute;
+    top: 70%;
+    right: 6%;
+}
+.flag_img_colombia {
+    position: absolute;
+    top: 83%;
+    right: 40%;
+}
+.flag_img_uk {
+    width: 160px !important;
+    position: absolute;
+    top: 54%;
+    right: 40%;
+}
+.flag_img_spain {
+    width: 145px !important;
+    position: absolute;
+    top: 74%;
+    right: 60%;
+}
+.flag_img_argentina {
+    position: absolute;
+    top: 5%;
+    right: 60%;
+}
+.flag_img_usa {
+    position: absolute;
+    top: 85%;
+    right: 80%;
+}
+.flag_img_brazil {
+    width: 145px !important;
+    position: absolute;
+    right: 94%;
+}
+.flag_img_chile {
+    position: absolute;
+    top: -2%;
+    right: 8%;
+}
+.flag_img_china {
+    position: absolute;
+    top: 60%;
+    right: 79%;
+}
+.flag_img_cuba {
+    position: absolute;
+    width: 150px !important;
+    height: 80px !important;
+    border-radius: 70px !important;
+    top: 16%;
+    right: 87%;
+    z-index: 0;
+}
+/* ********************************************************************************** */
+/* ********************* Botón Explore *************** ****************************** */
+/* ********************************************************************************** */
+a {
+    text-decoration:none;
+}
+/* svg {
+    fill:  #F1F0EE;
+} */
+.button {
+    width: 260px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #FE654F;
+    border-radius: 30px;
+    color:  #1E3231;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: none;
+    letter-spacing: 1px;
+    position: relative;
+    cursor: pointer;
+    transition-duration: .2s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+    padding-left: 8px;
+    transition-duration: .5s;
+}
+  
+.svgIcon {
+height: 35px;
+transition-duration: 1.5s;
+fill: #1E3231;
+
+}
+  
+.bell path {
+fill:  #F1F0EE;
+}
+
+.button:hover {
+/* background-color: #39A0ED; */
+box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.116);
+transition-duration: .5s;
+transform: translateY(-3px);
+}
+
+.button:active {
+transform: scale(0.97);
+transition-duration: .2s;
+}
+
+.button:hover .svgIcon {
+transform: rotate(250deg);
+transition-duration: 1.5s;
+}
+  
+  
