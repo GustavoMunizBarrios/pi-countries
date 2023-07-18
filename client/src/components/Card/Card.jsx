@@ -1,5 +1,5 @@
 import React from "react";
-import CardStyles from "./Card.module.css";
+import style from "./Card.module.css";
 import { NavLink } from "react-router-dom";
 
 // Componente DUMB -> solo se encarga de renderizar info
@@ -7,10 +7,10 @@ import { NavLink } from "react-router-dom";
 const Card = ({ id, name, flag_img, continent }) => {
   return (
     <NavLink to={`/detail/${id}`}>
-      <div className={CardStyles.Card}>
+      <div className={style.card}>
         <div>
           <div>
-            <img className={CardStyles.imgCard} src={flag_img} alt="Country" />
+            <img className={style.card_img} src={flag_img} alt="Country" />
           </div>
           <div>
             <h4>{name}</h4>
