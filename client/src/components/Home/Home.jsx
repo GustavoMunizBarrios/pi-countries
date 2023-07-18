@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react";
 import { getCountries ,getActivities, countryFilter, ordeByName} from "../../redux/actions";
 import SearchBar from "../SearchBar/SearchBar";
 import Paginado from '../Paginated/Paginated';
+import WordldMap from "../../assets/World Map.svg"
 
 const reload = () => {
     window.location.reload(false);
@@ -79,11 +80,12 @@ const Home = () => {
     
     return (
         
-        <div >
+        <div className={style.home}>
 
-                <div>
-                    <SearchBar handleFilter={handleFilter} onPageChange={handlePageChange}/>
-                </div>
+            <img src={WordldMap} alt="background world map" className={style.background_img}/>
+            <div>
+                <SearchBar handleFilter={handleFilter} onPageChange={handlePageChange}/>
+            </div>
 
             <div>
                <div>
