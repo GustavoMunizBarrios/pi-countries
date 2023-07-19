@@ -3,7 +3,7 @@
     justify-content: flex-end;
     align-items: center;
     width: 100vw;
-    height: 90px;
+    height: 110px;
 }
 .navigation > * {
     margin-right: 80px; /* Ajusta el espacio horizontal entre los elementos */
@@ -126,16 +126,17 @@
 /* *********************BOTON INPUT RESET ****************************** */
 /* ********************************************************************************** */
 .reset_btn {
+    cursor: pointer;
     color: white;
     background-color: #1E3231;
     font-weight: 600;
     border-radius: 30px;
-    width: 180px;
+    width: 157px;
     height: 40px;
     /* font-size: 1rem; */
     /* line-height: 2rem; */
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-top: 0.7rem;
     padding-bottom: 0.7rem;
     text-align: center;
