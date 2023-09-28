@@ -26,42 +26,57 @@ const reducer = (state = initialState, {type,payload}) => {
             return { ...state};
 
         case SEARCH_COUNTRY:
-            let PaisesBuscados = payload
+            let paisBuscado = payload
             let paisesfilt = state.countries
-            if(state.countries!==state.allCountries){
-                 PaisesBuscados = paisesfilt.filter((country) => payload.some((count) => count.id === country.id))
+            if(state.countries !== state.allCountries){ //si se aplico un filtro a contries entonces buscara el "paisBuscado" dentro de este filtro
+                 paisBuscado = paisesfilt.filter( //filter encuentra el pais/paises que coincide con el criterio de busqueda del payload
+                    (country) => payload.some( //some se utiliza para comparar si el id de cada país coincide con algún id de la lista de búsqueda proporcionada en el payload.
+                        (count) => count.id === country.id
+                    )
+                )
             }
-            return {...state, countries:PaisesBuscados};       
+            return {...state, countries:paisBuscado};       
 
-        // -------------------------------------FILTRADOS-----------------------------------
+        // -------------------------------------FILTROS-----------------------------------
 
         case FILTER_COUNTRY:
-            let countriesFiltrados = [...state.allCountries]
+            let paisesFiltrados = [...state.allCountries] // copia de la lista completa de los paises
 
-
-            if(payload.continent !== "All"){
-                countriesFiltrados = countriesFiltrados.filter(el => el.continent === payload.continent)
+            if(payload.continent !== "All"){ // si el valor del continente no es All entonces filtra deacuerdo al continente del payload
+                paisesFiltrados = paisesFiltrados.filter(el => el.continent === payload.continent) //filtrar los países cuyo continente coincida con el payload.continent
             }
- 
 
-            if(payload.activity !== "All"){
-                countriesFiltrados = countriesFiltrados.filter(country => country.Activities.find(activity => activity.name === payload.activity))
+            if(payload.activity !== "All"){ // si el valor de la actividad no es All entonces filtra deacuerdo con el payload
+                //filtra los paises que contienen la actividad especificada en payload.activity
+                paisesFiltrados = paisesFiltrados.filter(country => country.Activities.find(activity => activity.name === payload.activity))
             }
 
             return {
                 ...state,
-                countries: countriesFiltrados,
+                countries: paisesFiltrados,
             }
 
         // -------------------------------------ORDENAMIENTOS----------------------------------------
 
         case ORDER_BY_NAME:
-            const allcountriescopy = [...state.countries]
+            const allContriesCopy = [...state.countries] // copia de la lista de paises actual (estos pueden estar filtrados)
 
-            if(payload === "ascName")  return {...state,countries: allcountriescopy.sort((a, b) => a.name.localeCompare(b.name))}
-            if(payload === "descName")  return {...state,countries: allcountriescopy.sort((a, b) => b.name.localeCompare(a.name))}
-            if(payload === "ascPopulation")  return {...state,countries: allcountriescopy.sort((a, b) => parseInt(a.population, 10) - parseInt(b.population, 10))}
-            if(payload === "descPopulation")  return {...state,countries: allcountriescopy.sort((a, b) => parseInt(b.population, 10) - parseInt(a.population, 10))}
+            if(payload === "ascName") {
+                //ordenamiento ascendente de la lista de países A-Z en la propiedad "name" de cada pais. "localeCompare" realiza una comparación alfabética sensible a mayúsculas y minúscula
+                return {...state, countries: allContriesCopy.sort((a, b) => a.name.localeCompare(b.name))} 
+            }
+            if(payload === "descName") {
+                //ordenamiento descendente de la lista de países Z-A en la propiedad "name" de cada pais.
+                return {...state,countries: allContriesCopy.sort((a, b) => b.name.localeCompare(a.name))}
+            }  
+            if(payload === "ascPopulation") {
+                // ordenamiento ascendente de la lista de países de acuerdo a su población
+                return {...state,countries: allContriesCopy.sort((a, b) => parseInt(a.population, 10) - parseInt(b.population, 10))}
+            } 
+            if(payload === "descPopulation") {
+                // ordenamiento descendente de la lista de países de acuerdo a su población
+                return {...state,countries: allContriesCopy.sort((a, b) => parseInt(b.population, 10) - parseInt(a.population, 10))}
+            } 
             break;
 
         default:

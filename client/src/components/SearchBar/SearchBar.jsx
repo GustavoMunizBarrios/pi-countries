@@ -24,10 +24,10 @@ export default function SearchBar(props) {
   }; 
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); //evita que se recargue la página
     dispatch(searchCountry(name));
     setName('')
-    props.onPageChange(1);
+    props.onPageChange(1); //se llama a la función onPageChange y setea la pagina actual en 1
   };
   
   return (

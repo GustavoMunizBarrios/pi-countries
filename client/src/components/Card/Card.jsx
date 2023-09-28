@@ -2,8 +2,6 @@ import React from "react";
 import style from "./Card.module.css";
 import { NavLink } from "react-router-dom";
 
-// Componente DUMB -> solo se encarga de renderizar info
-
 const Card = ({ id, name, flag_img, continent }) => {
   return (
     <NavLink to={`/detail/${id}`}>

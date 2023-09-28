@@ -1,0 +1,19 @@
+.links {
+    /*    display: flex;
+       flex-direction: row; */
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       height: 60px;
+       width: 130px;
+/*        position: absolute;
+       top: 5%;
+       right: 90%; */
+       
+      }
+    .link_img{
+        width: 44px;
+    }
+    .link_img:hover {
+        width: 47px;
+    }

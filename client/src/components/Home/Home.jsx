@@ -8,26 +8,29 @@ import Paginado from '../Paginated/Paginated';
 import WordldMap from "../../assets/World Map.svg"
 import arrow from '../../assets/arrowIcon.svg'
 
-const reload = () => {
-    window.location.reload(false);
+const reload = () => { // función utilizada en el botón de recarga (Re-load)
+    window.location.reload(false); //recarga la página actual
 }
 
 const Home = () => {
     
-    const dispatch= useDispatch();
+    const dispatch = useDispatch();
     const countries = useSelector(state => state.countries)
     const allActivities = useSelector((state) => state.activities);
 
  //------------------------Paginado------------------------    
-    const [currentPage, setCurrentPage] = useState(1); //este estado sirve para indicar cual es la pagina en la que estamos parados
-    const elementsPerPage = 10; // esta es la cantidad de items que vamos a presentar por pagina
+    const [currentPage, setCurrentPage] = useState(1); //este estado sirve para indicar cual es la pagina actual en donde nos encontramos
+    const elementsPerPage = 10; // cantidad de elementos desplegados por pagina
 
-    const indexOfLastElement = currentPage * elementsPerPage; // obtenemos el indice del primer elemento y el ultimo de cada pagina.
+    // calculo del indice del primer elemento y el ultimo que se mostrarán en la págona actual.
+    const indexOfLastElement = currentPage * elementsPerPage; 
     const indexOfFirstElement = indexOfLastElement - elementsPerPage;
-    const currentElements = countries?.slice(indexOfFirstElement, indexOfLastElement); // como countries es un array, utilizamos el metodo slice para quedarnos con los items desde el primero hasta el ultimo que vamos a presentar en la pagina en la que nos encontramos actualmente. 
+    // como countries es un array, utilizamos el metodo slice para quedarnos con los items desde el primero hasta el ultimo que vamos a presentar en la pagina en la que nos encontramos actualmente. 
+    const currentElements = countries?.slice(indexOfFirstElement, indexOfLastElement); 
 
     
  //------------------------useEffect------------------------    
+ //Obtiene la lista de paises cuando el componente Home se monta por primera vez
     useEffect(()=> {
         dispatch(getCountries())
       },[dispatch])
@@ -42,11 +45,11 @@ const Home = () => {
    const [activityFilter,setActivityFilter] = useState("All")
    const [orderBy, setOrderBy] = useState("");
 
-//----------------------FILTROS-------------------------   
+//----------------------FILTROS - Continent, Activity-------------------------   
    
-    const handleFilterContinent = (event) => {
-        event.preventDefault();
-        setContinentFilter(event.target.value)
+    const handleFilterContinent = (event) => { //cuando ocurre el evento de cambio onChange en el selector continent
+        event.preventDefault(); //evita que la página se recargue automaticamente.
+        setContinentFilter(event.target.value) //actualiza el estado local continentFilter
     }
 
     const handleFilterActivity = (event) => {
@@ -54,19 +57,19 @@ const Home = () => {
         setActivityFilter(event.target.value)
     }
 
-//----------------------ORDEN-------------------------
-    const handleFilter = () => {
+//----------------------ORDEN - Name, Population-------------------------
+    const handleFilter = () => { // Cuando se hace click en el botón Filter
         setCurrentPage(1);
         let filters = {
           continent: continentFilter,
           activity: activityFilter,
         };
         dispatch(countryFilter(filters));
-        setOrderBy(""); // setea el select de ordenamiento, para que cada vez que hago un filtro, vuelva a la option Order by...
+        setOrderBy(""); // setea el select de ordenamiento "Name/Population", para que cada vez que hago un filtro, vuelva a la option Order by...
       };
 
-    const handleOrderByName = (event) => {
-        event.preventDefault();
+    const handleOrderByName = (event) => { // Cuando se selecciona una opción en el selector de ordenamiento "Name/Population"
+        event.preventDefault(); //evita que la página se recargue automaticamente.
         const selectedValue = event.target.value;
         setOrderBy(selectedValue); //indico que el estado OrderBy tenga el valor de la option seleccionada
         dispatch(ordeByName(selectedValue));
