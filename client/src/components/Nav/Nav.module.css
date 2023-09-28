@@ -1,19 +1,47 @@
-.links {
-    /*    display: flex;
-       flex-direction: row; */
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
-       height: 60px;
-       width: 130px;
-/*        position: absolute;
-       top: 5%;
-       right: 90%; */
-       
-      }
-    .link_img{
-        width: 44px;
-    }
-    .link_img:hover {
-        width: 47px;
-    }
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 110px;
+}
+.navigation > * {
+    margin-right: 80px; /* Ajusta el espacio horizontal entre los elementos */
+    margin-left: 80px;
+}
+
+/* ********************************************************************************** */
+/* ********************* Botón de HOME ****************************** */
+/* ********************************************************************************** */
+.home_btn {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    cursor: pointer;
+
+    border: none; 
+    background: none; 
+}
+.home_btn p {
+    font-family: 'Roboto', sans-serif;
+    padding-right: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    color: #1E3231;
+
+}
+.home_btn_img {
+    width: 30px;
+}
+/* ********************************************************************************** */
+/* *********************ENLACES ACTIVITY Y EXIT ****************************** */
+/* ********************************************************************************** */
+.create_btn {
+    font-family: 'Roboto', sans-serif;
+    padding-right: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    color: #1E3231;
+}

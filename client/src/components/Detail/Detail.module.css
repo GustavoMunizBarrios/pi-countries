@@ -1,3 +1,18 @@
+.main {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.background_img{
+  position: absolute;
+  top: -37%;
+  z-index: -1;
+  opacity: 0.45;
+  width: 1800px;
+  height: 1600px;
+}
 .image {
   width: 200px;
   border-radius: 10%;

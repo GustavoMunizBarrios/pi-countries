@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountryDetail } from "../../redux/actions";
 import { useEffect } from "react";
-import styles from './Detail.module.css'
+import WordldMap from "../../assets/World Map.svg"
+import style from './Detail.module.css'
 
 const Detail = () => {
   
@@ -16,13 +17,13 @@ const Detail = () => {
   },[id])
 
   return (
-    <div>
-
+    <div className={style.main}>
+      <img src={WordldMap} alt="background world map" className={style.background_img}/>
       <div>
 
         <div>
           <h1>{countries?.name}</h1>
-          <img className={styles.image} src={countries?.flag_img} alt={countries?.name} />
+          <img className={style.image} src={countries?.flag_img} alt={countries?.name} />
         </div>
 
         <div>
