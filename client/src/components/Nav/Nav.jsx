@@ -9,13 +9,11 @@ const Nav = () => {
     return (
     <div className={style.navigation}>
         
-        <NavLink to="/home">
-          <button className={style.home_btn}>
-            <img src={planet} alt="Image of planet earth" className={style.home_btn_img}/> 
-            <p>Home</p> 
-          </button>
+        <NavLink to="/home" className={style.home_btn}>
+          <img src={planet} alt="Image of planet earth" className={style.home_btn_img}/> 
+          <p>Home</p> 
         </NavLink>
-        
+
         <NavLink to="/form">
           <p className={style.create_btn}>Create Activity</p>
         </NavLink>
