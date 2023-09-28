@@ -14,7 +14,7 @@ const reload = () => { // función utilizada en el botón de recarga (Re-load)
 
 const Home = () => {
     
-    const dispatch = useDispatch();
+    const dispatch= useDispatch();
     const countries = useSelector(state => state.countries)
     const allActivities = useSelector((state) => state.activities);
 
@@ -175,14 +175,14 @@ const Home = () => {
                     )})
                     : (<p>Country not Found</p>)
                     }
-                    <div className={style.paginated}>
-                        <Paginado
-                        currentPage={currentPage}
-                        totalPages={totalPages}
-                        onChangePage={handlePageChange}
-                        />
-                    </div>
                 </div>
+            </div>
+            <div className={style.paginated}>
+                <Paginado
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onChangePage={handlePageChange}
+                />
             </div>
 
        </div>

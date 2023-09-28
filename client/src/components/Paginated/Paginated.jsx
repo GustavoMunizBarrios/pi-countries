@@ -15,10 +15,10 @@ const Paginado = ({ currentPage, totalPages, onChangePage }) => {
     }
   };
   return (
-    <div>
-      <button onClick={handlePreviousPage} disabled={currentPage === 1}>Prev</button>
-      <span>Page {currentPage} of {totalPages}</span>
-      <button onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
+    <div className={style.paginatedDetail}>
+      <button className={style.paginatedDetail_button} onClick={handlePreviousPage} disabled={currentPage === 1}>Prev</button>
+      <span className={style.paginatedDetail_text}>Page {currentPage} of {totalPages}</span>
+      <button className={style.paginatedDetail_button} onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
     </div>
   );
 };

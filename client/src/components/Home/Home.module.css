@@ -29,7 +29,7 @@
 
 .background_img{
     position: absolute;
-    top: -31%;
+    top: -28%;
     z-index: -1;
     opacity: 0.45;
     width: 1800px;
@@ -177,5 +177,7 @@
 /* ********************* PAGINADO ****************************** */
 /* ********************************************************************************** */
 .paginated {
-    width: 400px;
+    position: absolute;
+    bottom: 13%;
+    right: 39%;
 }
