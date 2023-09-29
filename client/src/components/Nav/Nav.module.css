@@ -25,6 +25,9 @@
     border: none; 
     background: none; 
 }
+.home_btn:hover p {
+    color:#FE654F;
+}
 .home_btn p {
     font-family: 'Roboto', sans-serif;
     padding-right: 10px;
@@ -47,4 +50,7 @@
     letter-spacing: 1px;
     font-size: 1.1rem;
     color: #1E3231;
+}
+.create_btn:hover {
+    color: #FE654F
 }
