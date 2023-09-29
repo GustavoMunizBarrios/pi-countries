@@ -19,7 +19,7 @@ const Detail = () => {
   return (
     <div className={style.main}>
       <img src={WordldMap} alt="background world map" className={style.background_img}/>
-      <div>
+      <div className={style.card}>
 
         <div>
           <h1>{countries?.name}</h1>
@@ -28,7 +28,7 @@ const Detail = () => {
 
         <div>
           <div>
-            <h1 >Country Data</h1>
+            <h2>Country Data</h2>
             <h3>Continent: {countries?.continent} </h3>
             <h3>Capital: {countries?.capital}</h3>
             <h3>Subregion: {countries?.subregion}</h3>
@@ -38,7 +38,7 @@ const Detail = () => {
 
           <div>
 
-            <h1>Tourist Activities</h1>
+            <h2>Tourist Activities</h2>
 
             <div> 
               {

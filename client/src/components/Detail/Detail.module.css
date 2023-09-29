@@ -18,3 +18,37 @@
   width: 200px;
   border-radius: 10%;
 }
+.card {
+  height:520px;
+  width:800px;
+  margin-left: 0px;
+  margin-right: 0px;
+
+  box-sizing: border-box;
+ /*  background: #1E3231; */
+  border: 2px solid #1E3231;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  /* text-align: center; */
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  user-select: none;
+  font-weight: bolder;
+  color: black;
+}
+.card h1, h3, h5  {
+  color: #1E3231;
+}
+.card:hover {
+  /* transform: scale(1.05); */
+  border: 2px solid #FE654F;
+  box-shadow: 3px 5px 51px #FE654F;
+}
+
+.card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
