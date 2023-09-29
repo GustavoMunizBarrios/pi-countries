@@ -5,7 +5,7 @@
     margin-right: 0px;
 
     box-sizing: border-box;
-    background: #1E3231;
+    /* background: #1E3231; */
     border: 2px solid #1E3231;
     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(6px);
@@ -21,7 +21,7 @@
     color: black;
   }
   .card h4, h6 {
-    color: #F1F0EE;
+    color: #1E3231;
   }
   .card:hover {
     transform: scale(1.05);
