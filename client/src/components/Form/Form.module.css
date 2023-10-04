@@ -1,13 +1,21 @@
+.contenedor{
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+  height: 580px;
+  align-items: center;
+}
+.contenedorCreate {
+  display: flex;
+  flex-direction: column;
+}
+.contenedorDelete {
+  display: flex;
+  flex-direction: column;
+}
 
 .formError {
   color: red;
   font-size: 13px;
   margin-top: 0px; 
-}
-
-.contenedor{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: 580px;
 }

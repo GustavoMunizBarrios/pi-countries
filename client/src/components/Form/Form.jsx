@@ -125,7 +125,7 @@ const Form = () => {
     return (
         <div className={style.contenedor}>
             {/* -----------------------Create activity sector----------------------- */}
-            <div>
+            <div className={style.contenedorCreate}>
                 <p>Create your Activity</p>
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <div>
@@ -224,7 +224,7 @@ const Form = () => {
             </div>
 
             {/* -----------------------Delete activity sector----------------------- */}
-            <div>
+            <div className={style.contenedorDelete}>
                 <div >
                     <p>Delete Activity</p>
                     <form onSubmit={(event) => handleSubmitDelete(event)}>
