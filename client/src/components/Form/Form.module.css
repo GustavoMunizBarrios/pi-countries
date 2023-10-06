@@ -1,21 +1,196 @@
+.background_img{
+  position: absolute;
+  top: -28%;
+  z-index: -1;
+  opacity: 0.45;
+  width: 1800px;
+  height: 1600px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .contenedor{
   display: flex;
   /* flex-direction: row; */
-  justify-content: center;
+  /* justify-content: center;
   height: 580px;
-  align-items: center;
+  align-items: center; */
+  margin-top: 5%;
 }
 .contenedorCreate {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 35px;
 }
 .contenedorDelete {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 35px;
 }
 
 .formError {
   color: red;
   font-size: 13px;
   margin-top: 0px; 
+}
+/* ********************************************************************************** */
+/* ********************* DISEÑO SELECTS ****************************** */
+/* ********************************************************************************** */
+
+/* .custom_select {
+  position: relative;
+  display: inline-block;
+} */
+.custom_box {
+  margin-bottom: 15px;
+}
+.custom_box input {
+  padding: 10px 40px 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  width: 200px;
+}
+.custom_select {
+  margin-bottom: 15px;
+}
+.custom_select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px 40px 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  width: 200px;
+}
+.custom_select select:focus {
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.activity_delete {
+  margin-bottom: 25px;
+}
+/* ********************************************************************************** */
+/* ********************* BOTON Create ****************************** */
+/* ********************************************************************************** */
+.create_btn {
+  width: 110px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+ /*  margin-right: 20px; */
+  margin-left: 90px;
+  margin-top: 20px;
+  background-color: #FE654F;
+  border-radius: 30px;
+  color: rgb(19, 19, 19);
+  font-weight: 600;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition-duration: .2s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+  padding-left: 8px;
+  transition-duration: .5s;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+.create_btn:hover {
+  background-color: #FE654F;
+  transition-duration: .5s;
+}
+.create_btn:active {
+  transform: scale(0.97);
+  transition-duration: .2s;
+}
+
+/* ********************************************************************************** */
+/* ********************* BOTON Delete ****************************** */
+/* ********************************************************************************** */
+
+.delete_btn {
+  width: 110px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+ /*  margin-right: 20px; */
+  margin-left: 30px;
+  margin-top: 20px;
+  background-color: #1E3231;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition-duration: .2s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+  padding-left: 8px;
+  transition-duration: .5s;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+.delete_btn:hover {
+  background-color: #1E3231;
+  transition-duration: .5s;
+}
+.delete_btn:active {
+  transform: scale(0.97);
+  transition-duration: .2s;
+}
+/* ********************************************************************************** */
+/* ********************* BOTON Reset Form ****************************** */
+/* ********************************************************************************** */
+
+.reset_btn {
+  cursor: pointer;
+  color: white;
+  background-color: #1E3231;
+  font-weight: 600;
+  border-radius: 30px;
+  width: 166px;
+  height: 40px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  /* font-size: 1rem; */
+  /* line-height: 2rem; */
+  padding-left: 1rem;
+  padding-right: 2rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  margin-top: 20px;
+  text-align: center;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+}
+.reset_btn:hover {
+  background-color: #333;
+}
+.reset_btn svg {
+  display: inline;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 0.4rem;
+  color: white;
+}
+.reset_btn:focus svg {
+  animation: spin_357 0.5s linear;
 }
