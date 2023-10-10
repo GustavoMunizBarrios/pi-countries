@@ -62,11 +62,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 .title h1 {
     margin-bottom: 100px;
     z-index: 5;
+}
+@media (max-width: 1628px) {
+    .title {
+        margin-left: 90px;
+        margin-bottom: 200px;
+        font-size: 2.5rem;
+    }
+
+}
+@media (max-width: 1241px) {
+    .title {
+        font-size: 2rem;
+    }
+    .background02 {
+        top:-30%;
+    }
+    .background {
+        top: 27%;
+        right: 55%;
+    }
+    .flag_img {
+        width: 100px;
+    }
+    .links {
+        right: 85%;
+    }
+    
+    
 }
 .imgEarth {
     width: 600px;
@@ -83,6 +110,11 @@
     -webkit-mask: var(--m);
           mask: var(--m);
     transition: .3s linear;
+}
+@media (max-width: 1420px) {
+    .imgEarth {
+        width: 400px;
+    }
 }
 .imgEarth:hover {
     /* width: 610px; */
