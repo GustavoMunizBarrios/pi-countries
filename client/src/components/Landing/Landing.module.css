@@ -67,34 +67,6 @@
     margin-bottom: 100px;
     z-index: 5;
 }
-@media (max-width: 1628px) {
-    .title {
-        margin-left: 90px;
-        margin-bottom: 200px;
-        font-size: 2.5rem;
-    }
-
-}
-@media (max-width: 1241px) {
-    .title {
-        font-size: 2rem;
-    }
-    .background02 {
-        top:-30%;
-    }
-    .background {
-        top: 27%;
-        right: 55%;
-    }
-    .flag_img {
-        width: 100px;
-    }
-    .links {
-        right: 85%;
-    }
-    
-    
-}
 .imgEarth {
     width: 600px;
     position: absolute;
@@ -111,11 +83,7 @@
           mask: var(--m);
     transition: .3s linear;
 }
-@media (max-width: 1420px) {
-    .imgEarth {
-        width: 400px;
-    }
-}
+
 .imgEarth:hover {
     /* width: 610px; */
 
@@ -267,5 +235,138 @@ transition-duration: .2s;
 transform: rotate(250deg);
 transition-duration: 1.5s;
 }
+/* ********************************************************************************** */
+/* ********************* Media queries *************** ****************************** */
+/* ********************************************************************************** */ 
   
-  
+@media (max-width: 1628px) {
+    .title {
+        margin-left: 90px;
+        margin-bottom: 200px;
+        font-size: 2.5rem;
+    }
+
+}
+@media (max-width: 1420px) {
+    .imgEarth {
+        width: 400px;
+    }
+}
+@media (max-width: 1241px) {
+    .title {
+        font-size: 2rem;
+    }
+    .background02 {
+        top:-30%;
+    }
+    .background {
+        top: 27%;
+        right: 55%;
+    }
+    .flag_img {
+        width: 100px;
+    }
+    .links {
+        right: 85%;
+    }
+}
+@media (max-width: 1120px) {
+    .title {
+        margin-left: 0;
+        margin-top: 5%;
+    }
+    .title h1 {
+        margin-bottom: 30px;
+    }
+    .imgEarth {
+        width: 300px;
+        right: 35%;
+        top: 60%;
+    }
+    .landing {
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .background02 {
+        right: -26%;
+    }
+    .flag_img_brazil {
+        display: none;
+    }
+    .flag_img_spain {
+        width: 100px !important;
+    }
+    .flag_img_uk {
+        width: 120px !important;
+        right: 20%;
+    }
+    .flag_img_cuba {
+        width: 110px !important;
+        height: 60px !important;
+    }
+    .flag_img_mexico {
+        top: 30%;
+        right: 67%;
+    }
+    .flag_img_argentina {
+        right: 50%;
+    }
+    .flag_img_france {
+        top: 80%;
+    }
+    .flag_img_kenia {
+        right: 30%;
+    }
+
+}
+@media (max-width: 1000px) {
+    .background02 {
+        width: 750px;
+        height: 375px;
+        top: -10%;
+    }
+    .background {
+        width: 750px;
+        height: 375px;
+        top: 54%;
+    }
+}
+@media (max-width: 870px) {
+    .links {
+        right: 80%;
+        top: 2%;
+        width: 110px;
+    }
+    .link_img {
+        width: 39px;
+    }
+    .imgEarth {
+        right: 30%;
+    }
+}
+/************* TABLET *****************/
+@media (max-width: 810px) and (min-height: 1080px) {
+    /* Coloca tus estilos específicos para 810x1080 aquí */
+    .title {
+        margin-top: 10%;
+    }
+    .background {
+        top: 64%;
+    }
+    .imgEarth {
+        top: 50%;
+    }
+    .flag_img_kenia {
+        display: none;
+    }
+  }
+/*************** CELLPHONES **************/
+@media (max-width: 428px) and (min-height: 926px) {
+    .title {
+        margin-bottom: 50px;
+        margin-top: 100px;
+    }
+    .title h1 {
+        font-size: 2.8rem;
+    }
+}
