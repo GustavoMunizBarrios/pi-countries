@@ -369,4 +369,35 @@ transition-duration: 1.5s;
     .title h1 {
         font-size: 2.8rem;
     }
+    .background02 {
+        width: 500px;
+        height: 250px;
+        top: -12%;
+    }
+    .background {
+        width: 500px;
+        height: 250px;
+        top: 74%;
+        right: 40%;
+    }
+    .imgEarth {
+        width: 250px;
+        right: 20%;
+        top: 50%;
+    }
+    .links {
+        right: 65%;
+    }
+    .flag_img_mexico {
+        top: 38%;
+    }
+    .flag_img_chile {
+        top: 40%;
+    }
+    .flag_img_cuba {
+        top: 19%;
+    }
+    .flag_img_kenia {
+        display: none;
+    }
 }
