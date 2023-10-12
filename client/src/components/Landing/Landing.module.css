@@ -359,8 +359,9 @@ transition-duration: 1.5s;
     .flag_img_kenia {
         display: none;
     }
-  }
-/*************** CELLPHONES **************/
+}
+
+  /*************** CELLPHONES **************/
 @media (max-width: 428px) and (min-height: 926px) {
     .title {
         margin-bottom: 50px;
@@ -493,5 +494,71 @@ transition-duration: 1.5s;
     }
     .flag_img_spain {
         width: 80px !important;
+    }
+}
+@media (max-width: 375px) and (min-height: 812px) {
+    .title {
+        margin-bottom: 50px;
+        margin-top: 100px;
+    }
+    .title h1 {
+        font-size: 2.8rem;
+    }
+    .button {
+        width: 240px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    .background02 {
+        width: 500px;
+        height: 250px;
+        top: -17%;
+        right: -30%;
+    }
+    .background {
+        width: 500px;
+        height: 250px;
+        top: 70%;
+        right: 40%;
+    }
+    .imgEarth {
+        width: 250px;
+        right: 18%;
+        top: 50%;
+    }
+    .links {
+        right: 65%;
+    }
+    .flag_img {
+        width: 80px;
+    }
+    .flag_img_mexico {
+        top: 45%;
+    }
+    .flag_img_chile {
+        top: 40%;
+    }
+    .flag_img_cuba {
+        top: 19%;
+    }
+    .flag_img_kenia {
+        display: none;
+    }
+    .flag_img_sweden {
+        right: 5%;
+        width: 80px;
+    }
+    .flag_img_uk {
+        right: 8%;
+        width: 90px  !important;
+    }
+    .flag_img_spain {
+        width: 80px !important;
+    }
+    .flag_img_usa {
+        right: 2%;
+    }
+    .flag_img_france {
+        top: 72%;
     }
 }
