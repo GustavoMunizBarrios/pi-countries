@@ -258,3 +258,25 @@ body {
         margin-right: 0;
     }
 }
+@media (max-width: 870px) {
+    .background_img {
+        width: 800px;
+        height: 710px;
+    }
+}
+@media (max-width: 690px) {
+    .background_img {
+        width: 650px;
+        height: 577px;
+    }
+}
+@media (max-width: 560px) {
+    .background_img {
+        display: none;
+    }
+}
+@media (max-width: 510px) {
+    .filters select {
+        width: 160px;
+    }
+}

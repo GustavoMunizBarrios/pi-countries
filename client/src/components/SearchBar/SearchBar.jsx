@@ -5,14 +5,16 @@ import { searchCountry } from "../../redux/actions";
 import { NavLink } from "react-router-dom";
 import planet from "../../assets/planet_comprimido.png"
 import style from './SearchBar.module.css'
-import linkedin from '../../assets/profilePicture.png'
-import github from '../../assets/profilePicture.png'
+import menuIcon from "../../assets/menu-svg.svg"
+/* import linkedin from '../../assets/profilePicture.png'
+import github from '../../assets/profilePicture.png' */
 
 const reload = () => {
     window.location.reload(false);
 }
 
 export default function SearchBar(props) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const dispatch = useDispatch();
 
   const [name, setName] = useState('');
@@ -53,7 +55,9 @@ export default function SearchBar(props) {
           <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"></path>
           <path d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" fill-rule="evenodd"></path>
           </svg>
+          <span>
             Reset search 
+          </span>
         </button>
 
       </div>
@@ -65,6 +69,23 @@ export default function SearchBar(props) {
       <NavLink to="/">
         <p className={style.create_btn}>Exit</p>
       </NavLink> 
+
+      <button className={style.hamburgerMenu} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <img className={style.menuIcon} src={menuIcon} alt="Menu Icon" />
+      </button>
+      {isMenuOpen && (
+        <div className={style.menuOverlay}>
+          <div className={style.menuItems}>
+            <NavLink to="/form">
+              <p className={style.create_btn_activity}>Create Activity</p>
+            </NavLink>
+            <NavLink to="/">
+              <p className={style.create_btn_exit}>Exit</p>
+            </NavLink> 
+          </div>
+        </div>
+      )}
+
       <a
         href="https://www.linkedin.com/in/developer-gustavo-mu%C3%B1iz-barrios-86708b121/"
         target="_blank"
