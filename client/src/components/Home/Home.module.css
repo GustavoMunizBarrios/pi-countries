@@ -280,3 +280,22 @@ body {
         width: 160px;
     }
 }
+@media (max-width:450px) {
+    .filters {
+        margin-top: 130px;
+    }
+}
+@media (max-width: 424px) {
+    .filters select {
+        width: 140px;
+    }
+    .custom_select select {
+        font-size: 14px;
+    }
+    .filters h3 {
+        font-size: 1em;
+    }
+    .filter_btn {
+        margin-left: 14px;
+    }
+}
