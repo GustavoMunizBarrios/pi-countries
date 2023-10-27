@@ -334,12 +334,18 @@
 }
 @media (max-width: 450px) {
     .input {
-        padding: 0 0 0 45px;
-        width: 40px;
+        padding: 0 0 0 4px;
+        width: 70px;
     }
     .search_btn {
         margin-right: 30px;
         margin-left: 10px;
+    }
+    .search_btn_svgIcon {
+        display: none;
+    }
+    .icon {
+        display: none;
     }
 }
    
