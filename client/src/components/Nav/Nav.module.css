@@ -62,3 +62,29 @@
         display: none;
     }
 }
+@media (max-width:450px) {
+    .navigation {
+        display: block;
+        /* justify-content: normal; */
+        
+    }
+    .home_btn {
+        margin-left: 0;
+        margin-right: 0;
+        border-bottom: 1px solid #0d0c22;
+        height: 93px;
+    }
+    .home_btn p {
+        margin-left: 15px;
+    }
+    .home_btn_img {
+        width: 40px;
+    }
+    .home_btn_box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+  }

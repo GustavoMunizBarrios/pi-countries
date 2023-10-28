@@ -194,3 +194,53 @@
 .reset_btn:focus svg {
   animation: spin_357 0.5s linear;
 }
+/* ********************************************************************************** */
+/* ********************* Media Queries ****************************** */
+/* ********************************************************************************** */
+
+@media (max-width:1660px) {
+  .background_img {
+    width: 1350px;
+    height: 1200px;
+  }
+}
+@media (max-width: 1100px) {
+  .background_img {
+    width: 1000px;
+    height: 888px;
+    top: 0%;
+  }
+}
+@media (max-width: 870px) {
+  .background_img {
+      width: 800px;
+      height: 710px;
+  }
+}
+@media (max-width: 825px) {
+  .background_img {
+    width: 650px;
+    height: 577px;
+  }
+}
+@media (max-width: 690px) {
+  .background_img {
+    display: none;
+    flex-direction: column;
+  }
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width:450px) {
+  .custom_box input {
+    width: 130px;
+  }
+  .custom_select input {
+    width: 185px;
+  }
+  .contenedor {
+    margin-top: 80px;
+  }
+}

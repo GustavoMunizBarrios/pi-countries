@@ -10,8 +10,10 @@ const Nav = () => {
     <div className={style.navigation}>
         
         <NavLink to="/home" className={style.home_btn}>
-          <img src={planet} alt="Image of planet earth" className={style.home_btn_img}/> 
-          <p>Home</p> 
+          <div className={style.home_btn_box}>
+            <img src={planet} alt="Image of planet earth" className={style.home_btn_img}/> 
+            <p>Home</p> 
+          </div>
         </NavLink>
 
         <NavLink to="/form">
