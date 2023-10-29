@@ -211,7 +211,7 @@
 
 .menuOverlay {
     position: absolute;
-    top: 7%;
+    top: 11%;
     left: 60%;
 /*     width: 100vw;
     height: 100vh; */
@@ -285,6 +285,7 @@
 @media (max-width: 870px) {
     .menuOverlay {
         left: 65%;
+        top: 7%;
     }
 }
 @media (max-width: 760px) {

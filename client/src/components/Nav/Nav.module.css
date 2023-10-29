@@ -12,6 +12,14 @@
     margin-right: 80px; /* Ajusta el espacio horizontal entre los elementos */
     margin-left: 80px;
 }
+.home_btn_box {
+    display: flex;
+    display: flex;
+    align-items: center;
+}
+.home_btn_img {
+    margin-right: 10px;
+}
 
 /* ********************************************************************************** */
 /* ********************* Botón de HOME ****************************** */
@@ -86,5 +94,8 @@
         align-items: center;
         justify-content: center;
         width: 100%;
+    }
+    .home_btn_img {
+        margin-right: 0px;
     }
   }
