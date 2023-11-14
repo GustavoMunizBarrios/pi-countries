@@ -1,4 +1,3 @@
-/* const axios = require("axios");
 const server = require("./src/server");
 const { conn } = require('./src/db.js');
 const DB_upload = require('./DB_upload')
@@ -16,8 +15,10 @@ conn
       })
 }).catch(error => console.error(error))
 
-module.exports = server; */
-const express = require('express');
+module.exports = server;
+
+
+/* const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const server = require("./src/server");
 const { conn } = require('./src/db.js');
@@ -47,5 +48,5 @@ app.listen(proxyPort, () => {
   console.log(`Proxy server listening on port ${proxyPort}`);
 });
 
-module.exports = server;
+module.exports = server; */
 
