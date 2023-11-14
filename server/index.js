@@ -11,7 +11,7 @@ conn
   .sync({ force: false })
   .then(async() => {
       await DB_upload();
-      server.listen(port, () => {
+      server.listen(port, "0.0.0.0", () => {
         console.log(`Server listening on port ${port}`);
       })
 }).catch(error => console.error(error))
