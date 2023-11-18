@@ -1,11 +1,10 @@
-const { Router } = require("express");
-const path = require('path');
 const express = require("express");
+const path = require('path');
 
 const countries = require('./countries')
 const activities = require('./activities')
 
-const router = Router()
+const router = express.Router()
 
 // Sirve tus archivos estáticos
 router.use(express.static(path.join(__dirname, 'dist')));
