@@ -8,4 +8,7 @@ const router = Router()
 router.use('/countries', countries) 
 router.use('/activities', activities)
 
+router.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 module.exports = router;
