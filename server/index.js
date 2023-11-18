@@ -1,6 +1,7 @@
 const server = require("./src/server");
 const { conn } = require('./src/db.js');
-const DB_upload = require('./DB_upload')
+const DB_upload = require('./DB_upload');
+const path = require('path');
 const port = process.env.PORT || 3001;
 
 
@@ -8,12 +9,24 @@ const port = process.env.PORT || 3001;
 //Cuando esta en true los datos se borran si el servidor se cierra.
 conn
   .sync({ force: false })
-  .then(async() => {
-      await DB_upload();
-      server.listen(port, "0.0.0.0", () => {
-        console.log(`Server listening on port ${port}`);
-      })
-}).catch(error => console.error(error))
+  .then(async () => {
+    await DB_upload();
+    server.listen(port, "0.0.0.0", () => {
+      console.log(`Server listening on port ${port}`);
+    });
+  })
+  .catch(error => console.error(error));
+
+// Manejo de rutas estáticas para la aplicación cliente en producción
+if (process.env.NODE_ENV === 'production') {
+  const clientBuildPath = path.join(__dirname, '../client/build');
+  server.use(express.static(clientBuildPath));
+
+  // Ruta de comodín para manejar todas las demás solicitudes
+  server.get('*', (req, res) => {
+    res.sendFile(path.join(clientBuildPath, 'index.html'));
+  });
+}
 
 module.exports = server;
 
