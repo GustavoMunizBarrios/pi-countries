@@ -13,6 +13,10 @@ server.use(cors());
 // Serve your static files
 server.use(express.static(path.join(__dirname, 'dist')));
 
+server.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
 server.use(router);
 
 module.exports = server;
